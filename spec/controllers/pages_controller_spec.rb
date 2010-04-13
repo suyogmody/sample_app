@@ -39,4 +39,16 @@ describe PagesController do
                               "ruby on rails tutorial sample app | About")
     end
   end
+  describe "GET 'help'" do
+    it "should be successful" do
+      get 'help'
+      response.should be_success
+    end
+    it "should have the right title" do
+      get 'help'
+      response.should have_tag("title",
+                              "ruby on rails tutorial sample app | Help")
+    end
+  end
+  
 end
